@@ -49,16 +49,20 @@ docker compose ps
 
 docker compose exec web python manage.py migrate
 
-# Criar superusuário para admin
+# O superusuário já está criado com as credenciais:
 
-docker compose exec web python manage.py createsuperuser
+# Usuário: Daniel
+
+# Senha: 123mudar
+
+# (Caso precise recriar: docker compose exec web python manage.py createsuperuser)
 
 ### 5) Verificar endpoints
 
 Após o setup, a API estará disponível em:
 
 - API Base: http://127.0.0.1:8000
-- Admin Django: http://127.0.0.1:8000/admin/
+- Admin Django: http://127.0.0.1:8000/admin/ (use: Daniel / 123mudar)
 - Documentação (se configurada): http://127.0.0.1:8000/api/doc/
 - Endpoints principais: http://127.0.0.1:8000/api/relatorios/
 
@@ -123,7 +127,7 @@ Nota:
 
 Fluxo coberto:
 
-- Login com usuário de teste.
+- Login com usuário de teste (Daniel / 123mudar).
 - Acesso à página "Relatórios".
 - Criação de relatório:
   - Tipo: TORRE
@@ -175,7 +179,15 @@ npm run test:run
 Frontend (.env.local):
 VITE_API_BASE_URL=http://127.0.0.1:8000
 
-## Usuário de teste
+## Credenciais de acesso
+
+### Usuário Admin (Backend Django)
+
+- Usuário: Daniel
+- Senha: 123mudar
+- Acesso: http://127.0.0.1:8000/admin/
+
+### Usuário de teste (Frontend)
 
 - Login: Daniel
 - Senha: 123mudar
